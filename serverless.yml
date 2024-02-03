@@ -1,0 +1,15 @@
+service: aws-node-http-api-project
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: 'ap-south-1'
+
+functions:
+  serverlessHello:
+    handler: hello.handler
+    events:
+      - httpApi:
+          path: /hello
+          method: get
